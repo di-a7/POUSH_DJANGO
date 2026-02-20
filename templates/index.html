@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+{% block title %}
+Index
+{% endblock title %}
+{% block body %}
+
+   <h1>{{heading}}</h1>
+
+   <div class="container">
+      
+      <table class="table">
+         <thead>
+            <tr>
+               <th scope="col">id</th>
+               <th scope="col">Name</th>
+               <th scope="col">Age</th>
+               <th scope="col">Contact</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for person in people %}
+            <tr>
+               <th scope="row">{{forloop.counter}}</th>
+               <td>{{person.username}}</td>
+               <td>
+                  {% if person.age < 16 %}
+                  Young
+                  {% elif person.age < 50 %}
+                  Middle age
+                  {% else %}
+                  Old
+                  {% endif %}
+                  {{person.age}}
+               </td>
+               <td>{{person.contact}}</td>
+            </tr>
+            {% endfor %}
+
+         </tbody>
+      </table>
+
+   </div>
+
+{% endblock body %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Todolists{% endblock title %}
+
+{% block body %}
+<h1>Todo Lists</h1>
+<h3>Total Task: {{total}}</h3>
+<h3>Completed Task: {{completed}}</h3>
+<h3>Incomplete Task: {{incomplete}}</h3>
+
+<div class="container">
+   <table class="table">
+   <thead>
+      <tr>
+         <th scope="col">id</th>
+         <th scope="col">Title</th>
+         <th scope="col">Description</th>
+         <th scope="col">Status</th>
+         <th scope="col">Actions</th>
+      </tr>
+   </thead>
+   <tbody>
+      {% for task in tasks %}
+      <tr>
+         <th scope="row">{{forloop.counter}}</th>
+         <td>{{task.title}}</td>
+         <td>{{task.description}}</td>
+         <td>
+            {% if task.status %}
+            <span class = 'text-success'>
+               Completed
+            </span>
+            {% else %}
+            <span class = 'text-danger'>
+               Pending
+            </span>
+            {% endif %}
+         </td>
+         <td>
+            <a href="{{task.id}}" class = 'btn btn-success'>Mark</button>
+            <a href="{{task.id}}/edit/" class = 'btn btn-primary'>Edit</button>
+            <a href="{{task.id}}/delete/" class = 'btn btn-danger'>Delete</button>
+         </td>
+      </tr>
+      {% endfor %}
+   </tbody>
+</table>
+</div>
+{% endblock body %}
+
+<!-- todolist/13/ -->

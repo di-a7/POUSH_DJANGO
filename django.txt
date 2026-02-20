@@ -1,0 +1,24 @@
+# Django : python based framework, Full stack
+
+- Frontend (User Interface, api integration)
+- Backend   (Data handling, database management, api creation)
+
+# Django Architecture:MVT
+Model(M):   data, table, 
+View(V):    logic 
+Templete(T): User interface
+
+
+# Requirement gathering
+# Design
+# Implementation
+# Testing 
+# Deployment
+
+# Database design
+# Table: Todolist
+- title        [Char, String]
+- description  [Char, String]
+- status       [boolean]
+- completeby   [datatime]
+
