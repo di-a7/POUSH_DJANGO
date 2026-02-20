@@ -56,3 +56,12 @@ a.delete()
 
 # to filter data
 model_name.objects.filter(field1 = "...", field2 = "...", ....)
+
+# requirements.txt create
+pip freeze > requirements.txt
+
+# install package using requirements.txt file
+pip install -r requirements.txt
+
+# uninstall package using requirements.txt file
+pip uninstall -r requirements.txt
